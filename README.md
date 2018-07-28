@@ -4,7 +4,7 @@ README
 ======
 This project (and its dependencies) contains the EuroPython website source code.
 
-The code is used for the EuroPython 2018 website.
+The code is used for the EuroPython 2019 website.
 
 LICENSE
 =======
@@ -33,15 +33,23 @@ RUN IN DEBUG MODE
 DEBUG=True python manage.py runserver
 ```
 
+SERVING THE PAGE LOCALLY OVER HTTPS
+-----------------
+
+Make sure `sslserver` is in `settings.INSTALLED_APPS`. Then run the server locally using:
+```bash
+python manage.py runsslserver
+```
+
 CONTRIBUTING
 ------------
 
 1. Make a fork of github.com/europython/epcon
 2. Make changes in your fork (ideally on a feature/bugfix branch)
-3. Make sure your branch is based on latest upstream/dev/ep2018
+3. Make sure your branch is based on latest upstream/dev/ep2019
     (provision.sh adds europython/epcon as upstream)
 4. Push your changes.
-5. Create a pull request to europython/epcon, targeting dev/ep2018 branch.
+5. Create a pull request to europython/epcon, targeting dev/ep2019 branch.
 
-IMPORTANT: all the active development happens on the dev/ep2018 branch, master
+IMPORTANT: all the active development happens on the dev/ep2019 branch, master
 is not up to date.
