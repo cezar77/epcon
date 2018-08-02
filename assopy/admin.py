@@ -6,11 +6,10 @@ from django.conf import settings as dsettings
 from django.conf.urls import url, patterns
 from django.contrib import admin
 from django.core import urlresolvers
-from django.db import transaction
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render_to_response
 from django.utils.safestring import mark_safe
-from assopy import models, settings
+from assopy import models
 from collections import defaultdict
 from datetime import datetime
 
@@ -158,7 +157,7 @@ class OrderAdmin(admin.ModelAdmin):
     _total_payed.short_description = 'Payed'
 
     def _invoice(self, o):
-        from django.contrib.admin.util import quote
+        from django.contrib.admin.utils import quote
         output = []
         # MAL: PDF generation is slower, so default to HTML
         if 1 or dsettings.DEBUG:
